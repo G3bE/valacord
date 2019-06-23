@@ -1,9 +1,11 @@
 // valacord © Nikolas Wipper 2019
 
-public errordomain ParsingError {
-    UnexpectedType
-}
+namespace discord {
+	public errordomain ParsingError {
+		UnexpectedType
+	}
 
-public errordomain HTTPError {
-    RequestFailed
+	public errordomain HTTPError {
+		RequestFailed
+	}
 }

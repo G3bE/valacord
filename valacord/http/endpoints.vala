@@ -39,6 +39,8 @@ namespace discord {
 
 	// bUt ThIs WaY oF iNdEnTaTiOn Is iLlEgAl
 
+	// @TODO: finish this list
+
 	// -------------------- GATEWAY --------------------
 
 	public const Endpoint GET_GATEWAY                   = {Method.GET,    "/gateway"};

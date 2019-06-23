@@ -23,7 +23,7 @@ libvalacord.so: $(SRCS)
 	# install
 	cp valacord.h tests/
 	cp valacord.h bin/
-	cp valcord.vapi bin/
+	cp valacord.vapi bin/
 	cp libvalacord.so bin/
 	# clear
 	rm $(OBJS)
