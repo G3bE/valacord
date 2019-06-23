@@ -29,7 +29,7 @@ MacOS:
 brew install libsoup json-glib
 ```
 
-Ubuntu (not tested, last one is guessed):
+Ubuntu (not tested, the last one is guessed):
 ```
 sudo apt-get install libsoup2.4-dev json-glib1.0-dev
 ```
@@ -38,15 +38,15 @@ Windows:
 ```
 How would you use the Makefile anyways?
 ```
-> What essentialy matters when installing those packages, is that pkg-config can find them. This can easyly be achived by adding the directory wich contains libsoup/json-glib.pc to the PKG_CONFIG_PATH environment variable. 
-> To do so use 'export PKG_CONFIG_PATH="path/to/libsoup/json-glib/"' in the terminal you are building the lib with or copy that into you .bash_profile
+> What essentially matters when installing those packages is that pkg-config can find them. This can easily be achieved by adding the directory which contains libsoup/json-glib.pc to the PKG_CONFIG_PATH environment variable. 
+> To do so use 'export PKG_CONFIG_PATH="path/to/libsoup/json-glib/"' in the terminal you are building the lib with or copy that into your .bash_profile
 > Keep in mind this is only working on UNIX / UNIX-like systems or on Windows' WSL
 
 ## Building
 There are several build rules for several objects
-- valacord.vapi
+- libvalacord.so
   - creates the library itself
-- tests
+- test
   - builds the library
   - builds tests
 
@@ -67,7 +67,7 @@ To produce a binary that can use valacord you will have to invoke the following 
 Let's take a look at this command.
 `--pkg=gio-2.0` enables you to create asynchronous functions that can handle events.
 > As there is no gateway support atm there is no way to register event handlers.
-`--pkg json-glib-1.0` creates support for JSON objects. This is not necessarily needed, but recommended.
+`--pkg json-glib-1.0` creates support for JSON objects. This is not necessarily needed but recommended.
 `lvalacord` tells the compiler to link against the valacord library
 `-o mybot` forces the compiler to name the binary mybot
 `main.vala valacord.vapi` tells the compiler our source files. `valacord.vapi` is required, so it knows we have the classes defined.
