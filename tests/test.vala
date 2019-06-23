@@ -9,5 +9,4 @@ void main() {
     int64 channel_id = 494188624842063872;
     // Now create the message
     api.create_message(channel_id, "Hello World!");
-    yield;
 }

@@ -39,8 +39,6 @@ namespace discord {
 
 	// bUt ThIs WaY oF iNdEnTaTiOn Is iLlEgAl
 
-	// @TODO: finish this list
-
 	// -------------------- GATEWAY --------------------
 
 	public const Endpoint GET_GATEWAY                   = {Method.GET,    "/gateway"};
@@ -165,5 +163,53 @@ namespace discord {
 	
 	public const Endpoint GET_GUILD_WIDGET_IMAGE        = {Method.GET,    GUILD + "/widget.png"};
 
+	// -------------------- INVITE --------------------
+	private const string INVITE                         = "/invites/{invite_code}";
 
+	public const Endpoint GET_INVITE                    = {Method.GET,    INVITE};
+	public const Endpoint DELETE_INVITE                 = {Method.DELETE; INVITE};
+
+	// -------------------- USER --------------------
+	private const string USER                           = "/users/{user_id}";
+	private const string USER_GUILD                     = "/users/@me/guilds/{guild_id}";
+
+	public const Endpoint GET_USER                      = {Method.GET,    USER};
+
+	public const Endpoint GET_CURRENT_USER              = {Method.GET,    "/users/@me"};
+	public const Endpoint MODIFY_CURRENT_USER           = {Method.PATCH,  "/users/@me"};
+
+	public const Endpoint GET_CURRENT_USER_GUILDS       = {Method.GET,    "/users/@me/guilds"};
+
+	public const Endpoint LEAVE_GUILD                   = {Method.DELETE, USER_GUILD};
+
+	public const Endpoint GET_USER_DMS                  = {Method.GET,    "/users/@me/channels"};
+	public const Endpoint CREATE_DM                     = {Method.POST,   "/users/@me/channels"};
+	public const Endpoint CREATE_GROUP_DM               = {Method.POST,   "/users/@me/channels"};
+
+	public const Endpoint GET_USER_CONNECTIONS          = {Method.GET,    "/users/@me/connections"};
+
+	// -------------------- VOICE --------------------
+
+	public const Endpoint LIST_VOICE_REGIONS            = {Method.GET,    "/voice/regions"};
+
+	// -------------------- WEBHOOK --------------------
+	public const string WEBHOOK                         = "/webhooks/{webhook_id}";
+	public const string WEBHOOK_TOKEN                   = WEBHOOK + "/{webhook_token}";
+
+	public const Endpoint CREATE_WEBHOOK                = {Method.POST,   CHANNEL + "/webhooks"};
+	public const Endpoint GET_CHANNEL_WEBHOOK           = {Method.GET,    CHANNEL + "/webhooks"};
+
+	public const Endpoint GET_GUILD_WEBHOOKS            = {Method.GET,    GUILD + "/webhooks"};
+
+	public const Endpoint GET_WEBHOOK                   = {Method.GET,    WEBHOOK};
+	public const Endpoint MODIFY_WEBHOOK                = {Method.PATCH,  WEBHOOK};
+	public const Endpoint DELETE_WEBHOOK                = {Method.DELETE, WEBHOOK};
+
+	public const Endpoint GET_WEBHOOK_WITH_TOKEN        = {Method.GET,    WEBHOOK_TOKEN};
+	public const Endpoint MODIFY_WEBHOOK_WITH_TOKEN     = {Method.PATCH,  WEBHOOK_TOKEN};
+	public const Endpoint DELETE_WEBHOOK_WITH_TOKEN     = {Method.DELETE, WEBHOOK_TOKEN};
+	public const Endpoint EXECUTE_WEBHOOK               = {Method.POST,   WEBHOOK_TOKEN};
+
+	public const Endpoint EXECUTE_SLACK_WEBHOOK         = {Method.POST,   WEBHOOK_TOKEN + "/slack"};
+	public const Endpoint EXECUTE_GITHUB_WEBHOOK        = {Method.POST,   WEBHOOK_TOKEN + "/github"};
 }
