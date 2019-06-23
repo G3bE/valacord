@@ -1,0 +1,12 @@
+# Feel free to add temporary files here that should not end up in the git repo
+
+# MagOS X
+**/.DS_Store
+**/._**
+
+# Files generated while building
+**/valacord.h
+**/valacord.vapi
+**/libvalacord.so
+test
+bin/
