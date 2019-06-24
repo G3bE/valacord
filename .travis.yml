@@ -3,7 +3,7 @@ language: c
 os:
   - osx
 before_install:
-  - brew install valac
+  - brew install vala
 install:
   - brew install libsoup json-glib
 # @TODO: add linting
