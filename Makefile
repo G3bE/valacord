@@ -5,7 +5,7 @@ SRCS = $(SP)/valacord.vala $(SP)/http/https.vala $(SP)/http/api.vala $(SP)/http/
 OBJS = $(addsuffix .c, $(basename $(SRCS)))
 
 VLC = valac
-GCC = gcc-9
+GCC = gcc
 
 VALFLAGS = --pkg=gio-2.0 --pkg soup-2.4 --pkg json-glib-1.0 --library valacord --basedir ./
 GCCFLAGS = --shared -fPIC
