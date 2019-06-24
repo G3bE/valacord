@@ -38,8 +38,8 @@ Windows:
 ```
 How would you use the Makefile anyways?
 ```
-> What essentially matters when installing those packages is that pkg-config can find them. This can easily be achieved by adding the directory which contains libsoup/json-glib.pc to the PKG_CONFIG_PATH environment variable. 
-> To do so use 'export PKG_CONFIG_PATH="path/to/libsoup/json-glib/"' in the terminal you are building the lib with or copy that into your .bash_profile
+> What essentially matters when installing those packages is that pkg-config can find them. This can easily be achieved by adding the directory which contains libsoup.pc/json-glib.pc to the PKG_CONFIG_PATH environment variable. 
+> To do so use 'export PKG_CONFIG_PATH="path/to/libsoup/or/json-glib/"' in the terminal you are building the lib with or copy that into your .bash_profile.
 > Keep in mind this is only working on UNIX / UNIX-like systems or on Windows' WSL
 
 ## Building
@@ -73,3 +73,30 @@ Let's take a look at this command.
 `main.vala valacord.vapi` tells the compiler our source files. `valacord.vapi` is required, so it knows we have the classes defined.
 ### Sample
 You'll find a basic usage example in `tests/test.vala`
+
+## Contributing
+As I'm quite new to Vala, contributions in terms of, but not limited to, code style are very welcome. If you are about to create
+a PR that includes such changes, please keep the following in mind:
+- State what you changed exactly; I want to improve wich is easier when I know what I did wrong
+- Link a style reference; knowing where to find other code style rules is very helpful
+
+If you have 'just' added a new features, please:
+- Make clear what you did; knowing wich features are already implemented helps
+- If you fixed a bug; please describe why this fixes it, if it's not obvious
+- Leave comments where your code is **not self-explaining**
+- Create doc-strings with the following template:
+```
+/**
+ * Do stuff
+ * ========
+ * 
+ * This function does this stuff
+ * -----------------------------
+ * @arg dank: Args should be documented like this
+ * @arg shit (optional): This one is optional
+ * @returns: A cool object
+ * @note: Keep that in mind while using
+ * @TODO: couldn't implement that yet, but it's needed
+ */
+```
+Thanks for contributing btw <3
