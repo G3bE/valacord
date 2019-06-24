@@ -2,12 +2,12 @@
 
 namespace discord {
 
-	public class HTTPS : Object {
+	public class HTTPS {
 		private Soup.Session session;
 		private Json.Parser parser;
 
-		private string URL = "https://discordapp.com/api/v";
-		private string VERSION = "7";
+		private const string URL = "https://discordapp.com/api/v";
+		private const string VERSION = "7";
 		private string token;
 
 		public HTTPS(string token) {

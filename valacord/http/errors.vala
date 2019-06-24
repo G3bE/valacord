@@ -6,6 +6,7 @@ namespace discord {
 	}
 
 	public errordomain HTTPError {
-		RequestFailed
+		RequestFailed,
+		RateLimited
 	}
 }

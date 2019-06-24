@@ -19,14 +19,15 @@ libvalacord.so: $(SRCS)
 	$(VLC) -C -H valacord.h $(VALFLAGS) $(SRCS)
 	# compile & link
 	$(GCC) $(GCCFLAGS) $(PKGFLAGS) -o libvalacord.so $(OBJS)
+	# clear
+	rm $(OBJS)
 
-	# install
+install: libvalacord.so
 	cp valacord.h tests/
 	cp valacord.h bin/
 	cp valacord.vapi bin/
 	cp libvalacord.so bin/
-	# clear
-	rm $(OBJS)
+
 
 test: valacord
 	$(VLC) --pkg=gio-2.0 --pkg json-glib-1.0 -X -I. -X -L. -X -lvalacord -o test tests/test.vala valacord.vapi --basedir ./

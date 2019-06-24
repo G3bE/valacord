@@ -2,7 +2,7 @@
 
 namespace discord {
 
-	public class API : Object {
+	public class API {
 		private HTTPS https;
 		private Json.Parser parser;
 
@@ -30,10 +30,8 @@ namespace discord {
 		 */
 		public async void create_message(int64 channel_id, string content = "", int nonce = 0, bool tts = false, string file = "", string embed = "{}") {
 			// This is used to format the enpoint (/channels/{channel_id}/messages)
-			parser.load_from_data(@"{\"channel_id\": $channel_id}", -1);
-			var format = parser.get_root().get_object();
-			// Async main loop
-			var loop = new MainLoop();
+			this.parser.load_from_data(@"{\"channel_id\": $channel_id}", -1);
+			var format = this.parser.get_root().get_object();
 
 			var payload = @"{\"content\": \"$content\", \"nonce\": $nonce, \"tts\": $tts, \"file\": \"$file\", \"embed\": $embed}";
 

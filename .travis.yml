@@ -1,0 +1,11 @@
+language: c
+
+os:
+  - osx
+before_install:
+  - brew install valac
+install:
+  - brew install libsoup json-glib
+# @TODO: add linting
+script:
+  - make libvalacord.so

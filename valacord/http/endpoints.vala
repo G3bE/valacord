@@ -167,7 +167,7 @@ namespace discord {
 	private const string INVITE                         = "/invites/{invite_code}";
 
 	public const Endpoint GET_INVITE                    = {Method.GET,    INVITE};
-	public const Endpoint DELETE_INVITE                 = {Method.DELETE; INVITE};
+	public const Endpoint DELETE_INVITE                 = {Method.DELETE, INVITE};
 
 	// -------------------- USER --------------------
 	private const string USER                           = "/users/{user_id}";
