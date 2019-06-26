@@ -5,7 +5,7 @@ using discord;
 void main() {
 	var loop = new MainLoop();
 	// Create a new API object
-    var api = new API("NDkzMzgyOTU2NTAxNTY1NDQ0.XQ_Uwg.TT3hxsYdayvRpPPg0r7I8MMbsb4");
+    var api = new API("<TOKENHERE>");
     // This is the channel_id. Make sure your bot has the permission to send messages to it
     int64 channel_id = 494188624842063872;
     // Now create the message
