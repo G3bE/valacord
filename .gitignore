@@ -8,5 +8,6 @@
 **/valacord.h
 **/valacord.vapi
 **/libvalacord.so
+**/*.c
 test
 bin/

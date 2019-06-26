@@ -1,7 +1,7 @@
 # source path
 SP = valacord
 
-SRCS = $(SP)/valacord.vala $(SP)/http/https.vala $(SP)/http/api.vala $(SP)/http/endpoints.vala $(SP)/http/errors.vala
+SRCS = $(SP)/valacord.vala $(SP)/http/https.vala $(SP)/http/api.vala $(SP)/http/endpoints.vala $(SP)/http/errors.vala $(SP)/models/base.vala $(SP)/models/snowflake.vala $(SP)/models/message.vala
 OBJS = $(addsuffix .c, $(basename $(SRCS)))
 
 VLC = valac
@@ -29,9 +29,10 @@ install: libvalacord.so
 	cp libvalacord.so bin/
 
 
-test: valacord
+test: libvalacord.so tests/test.vala
 	$(VLC) --pkg=gio-2.0 --pkg json-glib-1.0 -X -I. -X -L. -X -lvalacord -o test tests/test.vala valacord.vapi --basedir ./
-	# --------------- EXECUTION ---------------
+
+run_test: test
 	LD_LIBRARY_PATH=$(PWD) G_MESSAGES_DEBUG=all ./test
 
 clear:
@@ -39,4 +40,3 @@ clear:
 	rm valacord.vapi valacord.h libvalacord.so $(OBJS) tests/valacord.h test
 
 .PHONY: clean
-.PHONY: test

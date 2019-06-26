@@ -5,6 +5,7 @@ namespace discord {
 	public class API {
 		private HTTPS https;
 		private Json.Parser parser;
+		private Message temp;
 
 		public API(string token) {
 			this.https = new HTTPS(token);
@@ -12,6 +13,18 @@ namespace discord {
 		}
 
 		// @TODO: more functions
+
+		/**
+		 * Get gateway
+		 * ===========
+		 * 
+		 * Gets the gateway url
+		 * --------------------
+		 * @returns: The gateway url
+		 */
+		public async string get_gateway() {
+			return (yield this.https.make_request(GET_GATEWAY))->get_string_member("url");
+		}
 
 		/**
 		 * Create message
@@ -28,15 +41,14 @@ namespace discord {
 		 * @note: Either content or embed must be passed
 		 * @TODO: Accept JSON as embed
 		 */
-		public async void create_message(int64 channel_id, string content = "", int nonce = 0, bool tts = false, string file = "", string embed = "{}") {
+		public async Message create_message(int64 channel_id, string content = "", int nonce = 0, bool tts = false, string file = "", string embed = "{}") {
 			// This is used to format the enpoint (/channels/{channel_id}/messages)
 			this.parser.load_from_data(@"{\"channel_id\": $channel_id}", -1);
 			var format = this.parser.get_root().get_object();
 
 			var payload = @"{\"content\": \"$content\", \"nonce\": $nonce, \"tts\": $tts, \"file\": \"$file\", \"embed\": $embed}";
 
-			// Enpoint, body and our format string
-			yield this.https.make_request(CREATE_MESSAGE, payload, format);
+			return new Message(yield this.https.make_request(CREATE_MESSAGE, payload, format));
 		}
 
 	}
