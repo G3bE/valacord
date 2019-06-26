@@ -1,3 +1,4 @@
+<div align="center"><img src="https://github.com/G3bE/valacord/raw/master/resources/valacord.png" width="400px" /></div>
 
 # valacord
 The one and only Discord™-API wrapper for the Vala programming language
