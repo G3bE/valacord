@@ -68,12 +68,13 @@ MyBot
 To produce a binary that can use valacord you will have to invoke the following command:
 `valac --pkg=gio-2.0 --pkg json-glib-1.0 -X -I. -X -L. -X -lvalacord -o mybot main.vala valacord.vapi --basedir ./`
 Let's take a look at this command.
-`--pkg=gio-2.0` enables you to create asynchronous functions that can handle events.
+- `--pkg=gio-2.0` enables you to create asynchronous functions that can handle events.
 > As there is no gateway support atm there is no way to register event handlers.
-`--pkg json-glib-1.0` creates support for JSON objects. This is not necessarily needed but recommended.
-`lvalacord` tells the compiler to link against the valacord library
-`-o mybot` forces the compiler to name the binary mybot
-`main.vala valacord.vapi` tells the compiler our source files. `valacord.vapi` is required, so it knows we have the classes defined.
+
+- `--pkg json-glib-1.0` creates support for JSON objects. This is not necessarily needed but recommended.
+- `lvalacord` tells the compiler to link against the valacord library
+- `-o mybot` forces the compiler to name the binary mybot
+- `main.vala valacord.vapi` tells the compiler our source files. `valacord.vapi` is required, so it knows we have the classes defined.
 ### Sample
 You'll find a basic usage example in `tests/test.vala`
 
@@ -101,5 +102,7 @@ If you have 'just' added a new features, please:
  * @note: Keep that in mind while using
  * @TODO: couldn't implement that yet, but it's needed
  */
+public cool_object do_stuff(string dank, int shit = 1337)
+{...}
 ```
 Thanks for contributing btw <3
