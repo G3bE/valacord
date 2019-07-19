@@ -102,7 +102,6 @@ If you have 'just' added a new features, please:
  * @note: Keep that in mind while using
  * @TODO: couldn't implement that yet, but it's needed
  */
-public cool_object do_stuff(string dank, int shit = 1337)
-{...}
+public cool_object do_stuff(string dank, int shit = 1337) {...}
 ```
 Thanks for contributing btw <3
