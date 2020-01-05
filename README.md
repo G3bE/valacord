@@ -43,8 +43,6 @@ How would you use the Makefile anyways?
 > To do so use 'export PKG_CONFIG_PATH="path/to/libsoup/or/json-glib/"' in the terminal you are building the lib with or copy that into your .bash_profile.
 > Keep in mind this is only working on UNIX / UNIX-like systems or on Windows' WSL
 
-#### Need help? Join our [Discord guild](https://discord.gg/NHJmcXe)
-
 ## Building
 There are several build rules for several objects
 - libvalacord.so
