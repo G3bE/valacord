@@ -1,7 +1,8 @@
 <div align="center"><img src="https://github.com/G3bE/valacord/raw/master/resources/valacord.png" width="400px" /></div>
 
 # valacord
-The one and only Discord™-API wrapper for the Vala programming language
+The one and only Discord™-API wrapper for the Vala programming language <br>
+THIS PROJECT IS DISCONTINUED. See [#1](https://github.com/G3bE/valacord/issues/1) for more info!
 
 ## Project structure
 ```
